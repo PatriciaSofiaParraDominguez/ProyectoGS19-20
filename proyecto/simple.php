@@ -18,7 +18,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark top-fixed">
+      <nav class="navbar navbar-expand-md navbar-light top-fixed">
           <a class="navbar-brand" href="#"><img src="imagenes/logo.jpg" class="rounded mx-auto d-block" alt="..."></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -93,7 +93,7 @@
         <div class="container text-center">
           <h2>Contacto</h2>
           <p class="lead text-center">
-            Consúlta cualquier duda o pregunta sobre tu proyecto de traducción
+            Consulta cualquier duda o pregunta sobre tu proyecto de traducción
           </p> 
           <a href="tel:625507360" type="button" class="btn btn-light">Llámanos</a> 
           <a href="mailto:psparradominguez@gmail.com" type="button" class="btn btn-light">cmarinaparra@gmail.com</a>
@@ -103,14 +103,22 @@
     </div>
     <!--Footer-->
     <footer class="fixed-bottom text-left">
-        <div class="container">
+        <div class="container text-center">
             <div class="row">
-                <div class="col-12 text-secondary rounded">
+                <div class="col-6 text-secondary rounded">
                     Datos de contacto: Clara Marina Parra Domínguez
                     <br>
                     Correo: cmarinaparra@gmail.com
                     <br>
                     Telefono: +44 7871942411
+                </div>
+                <div class="col-6 text-secondary rounded">
+                    PAGO DE TRADUCCIONES
+                    <br>
+                    ¿Quieres poner en marcha tu traducción?<br>
+                    Puedes pagar con tarjeta o mediante transferencia.<br>
+                    O si lo prefiere puede hacerlo con 
+                    <a href="https://www.paypal.com/es/home" class="btn btn-success btn-block">Paypal</a><p>&nbsp;</p>
                 </div>
             </div>
         </div>

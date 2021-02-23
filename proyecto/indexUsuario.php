@@ -1,6 +1,11 @@
 <?php
   session_start();
   include 'conexion.php';
+  //Si la variable sesión está vacía
+  if (!isset($_SESSION['user'])){
+    /* nos envía a la siguiente dirección en el caso de no poseer autorización */
+    header("location: index.php"); 
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +21,6 @@
     <link href="css/cover.css" rel="stylesheet">
 
   </head>
-
   <body>
     <!--Barra de navegación-->
       <nav class="navbar navbar-expand-md navbar-light top-fixed">
@@ -31,10 +35,10 @@
                       <a class="nav-link b-card-text-light patri" href="index.php"><span class="sr-only">Home</span></a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle fs-6" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Traducciones
                     </a>
-                    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="traducir.php">¿Qué puedo traducir?</a>
                       <a class="dropdown-item" href="simple.php">Traducción simple</a>
                       <a class="dropdown-item" href="interpretacion.php">Interpretación</a>
@@ -58,6 +62,7 @@
           </div>
           <form class="form-inline my-2 my-lg-0" id="botonlog">
                   <button type="button" class="btn btn-light"><a class="link" href="login.php">Entrar</a></button><p>&nbsp;</p>
+                  <button type="button" class="btn btn-light"><a class="link" href="logout.php">Cerrar</a></button><p>&nbsp;</p>
           </form>
       </nav>
 
@@ -67,10 +72,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h1 class="text-center display-4">Clara Marina Parra Domínguez</h1>
-              <p class="text-center">Traductora interprete inglés-español.</p>
-              <p class="text-center">Con base en Londres, ofrece garantías de traducciones de calidad y seriedad. Todo a precios competentes</p>
-              <p>&nbsp;</p>
+              <h1 class="text-center display-4">Bienvenido a tu espacio personal</h1>
             </div>
           </div>
         </div>
@@ -80,29 +82,37 @@
     <p>&nbsp;</p>
     <div class="bg-light col-12 rounded text-center">
       <section class="container">
-        <h2>Traducciones Simples e Interpretaciones</h2>
-        <p class="lead">Experta en traducción de documentos, contratos, manuales e interpretaciones.</p>
-        <div>
-          <b-card-group deck>
-            <b-card bg-variant="light" text-variant="white" header="Traducciones Simples" class="text-center">
-              <b-card-text>Contratos, cuentas, manuales, licitaciones, informes, catálogos, publicaciones. <br></b-card-text>
-            </b-card>
-            <b-card bg-variant="light" text-variant="white" header="Interpretaciones" class="text-center">
-              <b-card-text>Interpretaciones en Castellano para todo tipo de reuniones, eventos y congresos presenciales.</b-card-text>
-            </b-card>
-          </b-card-group>
-        </div>        
+        <div class="bg-light col-12 rounded text-center" style="line-height: 32px;">Valóranos:</div>
+        <form action="addcomentario.php" id="frmComment" method="post">
+          <div class="star_content  text-center rounded text-center">
+            <input name="rate" value="1" type="radio" class="star"/> 
+            <input name="rate" value="2" type="radio" class="star"/> 
+            <input name="rate" value="3" type="radio" class="star"/> 
+            <input name="rate" value="4" type="radio" class="star"/> 
+            <input name="rate" value="5" type="radio" class="star"/>
+          </div>
+          <div class="row">
+            <label> Nombre: </label> <span id="name-info"></span><input class="form-field" id="name" type="text" name="user"> 
+          </div>
+          <div class="row">
+            <label for="mesg"> Comentario: <span id="comentario-info"></span></label>
+            <textarea class="form-field" id="message" name="message" rows="4"></textarea>   
+          </div>
+          <br>
+          <div class="row">
+            <input type="hidden" name="add" value="post" />
+            <button type="submit" name="submit" id="submit" class="btn-add-comment">Añadir Comentario</button>
+          </div>
+        </form>        
       </section>
     </div>
-
-    <p>&nbsp;</p>
-
+    <br>
     <div class="container">
       <section class="b-section">
         <div class="container text-center">
           <h2>Contacto</h2>
           <p class="lead text-center">
-            Consulta cualquier duda o pregunta sobre tu proyecto de traducción
+            Consúlta cualquier duda o pregunta sobre tu proyecto de traducción
           </p> 
           <a href="tel:625507360" type="button" class="btn btn-light">Llámanos</a> 
           <a href="mailto:psparradominguez@gmail.com" type="button" class="btn btn-light">cmarinaparra@gmail.com</a>
@@ -110,7 +120,7 @@
         </div>
       </section>
     </div>
-   <!--Footer-->
+    <!--Footer-->
     <footer class="fixed-bottom text-left">
         <div class="container text-center">
             <div class="row">

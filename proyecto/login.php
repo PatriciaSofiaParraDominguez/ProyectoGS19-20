@@ -1,6 +1,8 @@
 <?php
   session_start();
   include 'conexion.php';
+  $_SESSION["num1"] = rand(0,10);
+  $_SESSION["num2"] = rand(0,10);
 ?>
 <!doctype html>
 <html lang="en">
@@ -9,7 +11,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -19,7 +20,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark top-fixed">
+      <nav class="navbar navbar-expand-md navbar-light top-fixed">
           <a class="navbar-brand" href="#"><img src="imagenes/logo.jpg" class="rounded mx-auto d-block" alt="..."></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -53,6 +54,9 @@
                   </li>                  
                   <li class="nav-item">
                       <a class="nav-link" href="contacto.php">Contacto</a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="loginadmin.php"><span class="sr-only">Admin</span></a>
                   </li>                  
               </ul>                                    
           </div>
@@ -68,17 +72,14 @@
               <form class="col-md-12 col-lg-6 p-3 mt-3 rounded text-center" method="post" action="Administrar.php">
                 <div class="form-group">
                   <label for="recipient-usuario" class="col-form-label">Usuario</label>
-                  <input type="text" class="form-control" id="recipient-usuario" name="usuario" required>
+                  <input type="text" class="form-control" id="recipient-usuario" name="usuario1" required>
                 </div>
                 <div class="form-group">
                   <label for="recipient-contrasena" class="col-form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="recipient-contrasena" name="password" required>
+                  <input type="password" class="form-control" id="recipient-contrasena" name="password1" required>
                 </div><p>&nbsp;</p>
                 <div class="form-group col-12 rounded text-center">
-                  <input type="submit" name="submit" value="Entrar">
-                  <!--<button type="button" class="btn btn-light"><a class="link" href="index.php">Entrar</a></button>--><p>&nbsp;</p>
-                  <input type="submit" name="submit" value="Cerrar">
-                  <!--<button type="button" class="btn btn-light"><a class="link" href="logout.php">Cerrar</a></button>-->                   
+                  <input type="submit" name="submit" value="Entrar"><br>                  
                 </div>
               </form>
               <!--Registrarse-->
@@ -88,12 +89,12 @@
                   <input type="text" class="form-control" name="full_name" id="nombre1">
                 </div>                                
                 <div class="form-group">
-                  <label for="recipient-username" class="col-form-label">Nombre usuario</label>
-                  <input type="text" class="form-control" name="usuario" id="recipient-username">
-                </div>                                
-                <div class="form-group">
                   <label for="recipient-email" class="col-form-label">Email</label>
                   <input type="text" class="form-control" name="email" id="recipient-email1">
+                </div>                                
+                <div class="form-group">
+                  <label for="recipient-username" class="col-form-label">Nombre usuario</label>
+                  <input type="text" class="form-control" name="usuario" id="recipient-username">
                 </div>
                 <div class="form-group">
                   <label for="recipient-contrasena" class="col-form-label">Contraseña</label>
@@ -104,9 +105,12 @@
                   <input type="text" class="form-control" name="telefono" id="recipient-telefono1">
                 </div>
                 <div class="form-group">
-                  <input type="submit" name="submit" value="Registrarse">
-                 <!-- <button type="button" class="btn btn-light"><a class="link" href="index.php">Registrarse</a></button>-->          
-                </div>
+                  <form method="post" action="solve.php">
+                    Resuelve la operacion <?php echo $_SESSION["num1"]; ?>+ <?php echo $_SESSION["num2"];?>:<br>
+                    <input type="text" name="captcha" required>
+                    <input type="submit" value="Registrarse">
+                  </form>
+                </div>>
               </form> 
             </div>
         </section>    

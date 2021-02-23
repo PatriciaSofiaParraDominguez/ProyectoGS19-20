@@ -1,6 +1,11 @@
 <?php
   session_start();
   include 'conexion.php';
+  //Si la variable sesión está vacía
+  if (!isset($_SESSION['user'])){
+    /* nos envía a la siguiente dirección en el caso de no poseer autorización */
+    header("location: index.php"); 
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,7 +23,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark top-fixed">
+      <nav class="navbar navbar-expand-md navbar-light top-fixed">
           <a class="navbar-brand" href="#"><img src="imagenes/logo.jpg" class="rounded mx-auto d-block" alt="..."></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -27,7 +32,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                      <a class="nav-link" href="index.php"><span class="sr-only">Home</span></a>
+                      <a class="nav-link" href="indexUsuario.php"><span class="sr-only">Home</span></a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,6 +62,7 @@
           </div>
           <form class="form-inline my-2 my-lg-0" id="botonlog">
                   <button type="button" class="btn btn-light"><a class="link" href="login.php">Entrar</a></button><p>&nbsp;</p>
+                  <button type="button" class="btn btn-light"><a class="link" href="logout.php">Cerrar</a></button><p>&nbsp;</p>
           </form>
       </nav>
   <!--Header-->
@@ -86,16 +92,10 @@
                             <input type="email" class="form-control" name="email" placeholder="* Email" required>
                         </fieldset><br>
                         <fieldset class="form-group">
-                            <input type="phone" class="form-control" name="phone" placeholder="* Teléfono" required>
+                            <input type="phone" class="form-control" name="telefono" placeholder="* Teléfono" required>
                         </fieldset><br>
                         <fieldset class="form-group">
-                            <label class="file ">
-                                <input type="file" id="file" class="" multiple="multiple"  onchange="selectFile(this);" name="file[]"><br>
-                                <span class="file-custom">Adjunta el documento original (o un zip, si son varios archivos)</span>
-                            </label>
-                        </fieldset><br>
-                        <fieldset class="form-group">
-                            <textarea class="form-control textarea_3rows" name="message" placeholder="* Explicame qué necesitas traducir y a qué idioma" ></textarea>
+                            <textarea class="form-control textarea_3rows" name="mensaje" placeholder="* Explicame qué necesitas traducir y a qué idioma" ></textarea>
                         </fieldset>
                     </div><br>
                     <div class="col-12 text-center m-t-1 bg-light">
@@ -109,9 +109,9 @@
 
     <!--Footer-->
     <footer class="fixed-bottom text-left">
-        <div class="container">
+        <div class="container text-center">
             <div class="row">
-                <div class="col-12 text-secondary rounded">
+                <div class=" text-secondary rounded">
                     Datos de contacto: Clara Marina Parra Domínguez
                     <br>
                     Correo: cmarinaparra@gmail.com

@@ -5,15 +5,15 @@ session_start();
 
 var_dump($_POST);
 
-if (isset($_POST['email']) && $_POST['email'] && isset($_POST['password']) && $_POST['password']) {
-    $nombre = $_POST['full_name'];
+if (isset($_POST['name']) && $_POST['name'] )
+{
+    $nombre = $_POST['name'];
     $email = $_POST['email'];
-    $user = $_POST['usuario'];
-    $pass = $_POST['password'];
     $telefono = $_POST['telefono'];
+    $mensaje = $_POST['mensaje'];
     
 
-    $sql = "INSERT INTO user (full_name, email, username, password, telefono, rango_user) VALUES ('$nombre','$email','$user','$pass','$telefono', 'user')";
+    $sql = "INSERT INTO documento (full_name, email, telefono, mensaje) VALUES ('$nombre','$email','$telefono','$mensaje')";
     $result = $conn->query($sql);
 
     if ($result) {
@@ -23,9 +23,9 @@ if (isset($_POST['email']) && $_POST['email'] && isset($_POST['password']) && $_
     }
 
     $conn->close();
- } 
- else {
+} 
+else {
     header("Location: index.php");
- }
+}
 
- ?>
+?>

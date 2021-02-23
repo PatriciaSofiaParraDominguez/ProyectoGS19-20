@@ -18,7 +18,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark top-fixed">
+      <nav class="navbar navbar-expand-md navbar-light top-fixed">
           <a class="navbar-brand" href="#"><img src="imagenes/logo.jpg" class="rounded mx-auto d-block" alt="..."></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,6 @@
           <div class="row">
             <div class="col-12">
               <h1 class="text-center display-4">Plazos de Entregas</h1>
-              <p>&nbsp;</p>
             </div>
           </div>
         </div>
@@ -87,11 +86,7 @@
             <p>Tengo un plazo urgente de traducción 24 h.<br> para documentos muy breves (2-3 pags).<br> Si es más volumen, calcula que la urgencia,<br> permite dividir los plazos de traducción standard a la mitad.<br></p>
           </article> 
         </div>
-      </section>
-    </div>
-    <p>&nbsp;</p>    
-    <div class="row">
-      <section class="col-12">
+      
         <h1 class="col-12 rounded text-center">Plazo de Entrega standard</h1>
         <div class="row">            
           <article class="col-md-12 col-lg-6 p-3 mt-3 rounded text-center">
@@ -104,10 +99,6 @@
             <p>En el presupuesto te indicaré el plazo y día exacto de entrega.<br> El plazo se computa desde tu confirmación (si tardas 1 día en confirmar la entrega se retrasará 1 dia.<br> Obviamente se computan siempre días laborables y horario laboral.</p>
           </article> 
         </div>
-      </section>    
-    </div>
-    <div class="row">
-      <section class="col-12">
         <h1 class="col-12 rounded text-center">Traducción urgente 24h.</h1>
         <div class="row">            
           <article class="col-md-12 col-lg-6 p-3 mt-3 rounded text-center">
@@ -124,9 +115,9 @@
     <p>&nbsp;</p>
     <!--Footer-->
     <footer class="fixed-bottom text-left">
-        <div class="container">
+        <div class="container text-center">
             <div class="row">
-                <div class="col-12 text-secondary rounded">
+                <div class=" text-secondary rounded">
                     Datos de contacto: Clara Marina Parra Domínguez
                     <br>
                     Correo: cmarinaparra@gmail.com

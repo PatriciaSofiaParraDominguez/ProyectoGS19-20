@@ -18,7 +18,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark top-fixed">
+      <nav class="navbar navbar-expand-md navbar-light top-fixed">
           <a class="navbar-brand" href="#"><img src="imagenes/logo.jpg" class="rounded mx-auto d-block" alt="..."></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -68,99 +68,46 @@
               <h1 class="text-center display-4">Clara Marina Parra Domínguez</h1>
               <p class="text-center">Traductora interprete inglés-español.</p>
               <p class="text-center">Con base en Londres, ofrece garantias de traducciones de calidad y seriedad todo a precios competentes</p>
-              <p>&nbsp;</p>
             </div>
           </div>
         </div>
       </div>
     </header>
-
     <div class="row">
-        <section class="col-12 rounded text-center">
-            <div class="row"> 
-              <div class="container">
-                <h2>¿Qué puedo traducir?</h2>
-                <p class="lead">Soy experta en Traduccion normal de documentos y Interpretación.</p>
-                <div class="color-cards color-cards_center">
-                  <div class="color-card_wrap color-card_col">
-                    <h3>Tipo de traducción</h3>
-                    <div class="color-card bg-grey">
-                      <div>
-                        <div class="color-card__title">Traducción Simple</div>
-                        <div class="color-card__text"><a href="simple.php">Traducción de documentos, manuales, cuentas, manuales, licitaciones, informes, catálogos, publicaciones...</a></div>
-                      </div>
-                    </div>
-                    <div class="color-card bg-grey">
-                      <div>
-                        <div class="color-card__title">Interpretación</div>
-                        <div class="color-card__text"><a href="interpretacion.php">Interpretaciones para reuniones, ferias, congresos, eventos...</a></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="color-card_wrap color-card_col">
-                      <h3>Idiomas</h3>
-                      <div class="color-card bg-grey">
-                          <div>
-                              <div class="color-card__title">Traducciones directas</div>
-                              <div class="color-card__text">de Inglés a Español
-                              </div>
-                          </div>
-                      </div>
-                      <div class="color-card bg-grey">
-                          <div>
-                              <div class="color-card__title">Traducciones inversas</div>
-                              <div class="color-card__text">de Español a Inglés
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="color-card_wrap color-card_col">
-                      <h3>Plazos de entrega</h3>
-                      <div class="color-card bg-grey">
-                          <div>
-                              <div class="color-card__title">Traducciones normales</div>
-                              <div class="color-card__text">unos 3 días</div>
-                          </div>
-                      </div>
-                      <div class="color-card bg-grey">
-                          <div>
-                              <div class="color-card__title">Traducciones extensas</div>
-                              <div class="color-card__text">unas 3.000 palabras por día</div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-              </div>           
-            </div>
-        </section>    
-    </div>
-
-    <p>&nbsp;</p>
-
-    <div class="bg-light col-12 rounded text-center">
-      <section class="container">
-        <h2>Traducciones Simples y Interpretaciones</h2>
-        <p class="lead">Experta en traducción de documentos, contratos, manuales y de interpretaciones.</p>
-        <div>
-          <b-card-group deck>
-            <b-card bg-variant="light" border-variant="secondary" text-variant="white" header="Traducciones Simples" class="text-center">
-              <b-card-text>Contratos, cuentas, manuales, licitaciones, informes, catálogos, publicaciones</b-card-text>
-            </b-card>
-            <p>&nbsp;</p>
-            <b-card bg-variant="light" border-variant="secondary" text-variant="white" header="Interpretaciones" class="text-center">
-              <b-card-text>Interpretaciones en Castellano para todo tipo de reuniones, eventos y congresos presenciales.</b-card-text>
-            </b-card>
-          </b-card-group>
-        </div>        
+      <section class="col-12">
+        <h1 class="col-12 rounded text-center">¿Qué puedo traducir?</h1>
+        <div class="row">
+          <p class="col-12 rounded text-center">Soy experta en Traduccion normal de documentos y Interpretación.</p>            
+          <article class="col-md-12 col-lg-6 p-3 mt-3 rounded text-center">
+            <h3>Traducción Simple</h3>
+            <p>Traducción de documentos, manuales, cuentas,<br> manuales, licitaciones, informes, catálogos, publicaciones...</p>
+            <a href="simple.php" type="button" class="btn btn-light">+ información aqui</a>
+          </article>
+          <article class="col-md-12 col-lg-6 p-3 mt-3 rounded text-center">
+            <h3>Interpretación</h3>
+            <p>Interpretaciones para reuniones, ferias, congresos, eventos...</p>
+            <a href="interpretacion.php" type="button" class="btn btn-light">+ Información aqui</a>
+          </article> 
+        </div>
+      </section>
+      <section class="col-12">
+        <h1 class="col-12 rounded text-center">Traducciones Simples y Interpretaciones</h1>
+        <div class="row">           
+          <article class="col-12 rounded text-center">
+            <h3>Traducciones normales</h3>
+            <p>Contratos, cuentas, manuales, licitaciones, informes, catálogos, publicaciones</p>
+            <p>Interpretaciones en Castellano para todo tipo de reuniones, eventos y congresos presenciales.</p>
+          </article> 
+        </div>
       </section>
     </div>
     <p>&nbsp;</p>
 
     <!--Footer-->
     <footer class="fixed-bottom text-left">
-        <div class="container">
+        <div class="container text-center">
             <div class="row">
-                <div class="col-12 text-secondary rounded">
+                <div class=" text-secondary rounded">
                     Datos de contacto: Clara Marina Parra Domínguez
                     <br>
                     Correo: cmarinaparra@gmail.com
